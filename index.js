@@ -4,10 +4,12 @@ import { dbConn } from "./dbCon/dbCon.js"
 import { projectRouter } from "./routers/projectRouter.js"
 import { projectsLanguageRouter } from "./routers/projectLanguageRouter.js"
 import { ContactRouter } from "./routers/ContactRouter.js"
+import cors from "console"
 
 dotenv.config()
 const app = express()
 
+app.use(cors())
 app.use(urlencoded({extended:true}))
 app.use(json())
 app.use("/api",projectRouter)
