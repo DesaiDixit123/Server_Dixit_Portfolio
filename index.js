@@ -4,7 +4,7 @@ import { dbConn } from "./dbCon/dbCon.js"
 import { projectRouter } from "./routers/projectRouter.js"
 import { projectsLanguageRouter } from "./routers/projectLanguageRouter.js"
 import { ContactRouter } from "./routers/ContactRouter.js"
-import cors from "console"
+import cors from "cors"
 
 dotenv.config()
 const app = express()
