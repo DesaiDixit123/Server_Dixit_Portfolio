@@ -43,7 +43,7 @@ export const uploadImages = upload.fields([
 
 export const projects = async (req, res) => {
     try {
-        const { title, description, projectLanguage, githubLink } = req.body;
+        const { title, description, projectLanguage, githubLink,previewLink } = req.body;
 
         // Assigning file paths from req.files to variables
         const image1 = req.files.image1 ? req.files.image1[0].path : null;
@@ -79,6 +79,7 @@ export const projects = async (req, res) => {
             image5,
             projectLanguage,
             githubLink,
+            previewLink
         }).save();
 
         // Send success response
@@ -227,7 +228,7 @@ export const getProjectById = async (req, res) => {
 
 export const updateProject = async (req, res) => {
     try {
-        const { title, description, projectLanguage, githubLink } = req.body;
+        const { title, description, projectLanguage, githubLink,previewLink } = req.body;
         const { projectId } = req.params;
 
         // Validate project ID
@@ -260,6 +261,7 @@ export const updateProject = async (req, res) => {
         project.description = description || project.description;
         project.projectLanguage = projectLanguage || project.projectLanguage;
         project.githubLink = githubLink || project.githubLink;
+        project.previewLink = previewLink || project.previewLink;
         project.image1 = image1;
         project.image2 = image2;
         project.image3 = image3;

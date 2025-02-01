@@ -9,7 +9,8 @@ const projectSchema = Schema({
     image3:{type:String},
     image4:{type:String},
     image5: { type: String },
-    githubLink:{type:String}
+    githubLink:{type:String},
+    previewLink:{type:String},
 
 }) 
 
